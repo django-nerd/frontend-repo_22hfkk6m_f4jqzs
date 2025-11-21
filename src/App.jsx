@@ -18,7 +18,7 @@ function App() {
       </main>
       <footer className="border-t border-white/10 bg-slate-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-sm">© {new Date().getFullYear()} Your Name — CX/UX Designer</p>
+          <p className="text-slate-400 text-sm">© {new Date().getFullYear()} Mohamed Higazy — CX/UX Designer</p>
           <div className="flex items-center gap-4 text-slate-300">
             <a href="#top" className="hover:text-white">Top</a>
             <a href="#projects" className="hover:text-white">Projects</a>

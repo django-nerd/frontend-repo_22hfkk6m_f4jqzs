@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 export default function Experience() {
   const items = [
     { role: 'Senior Product Designer', company: 'Acme Corp', time: '2022 — Present', points: ['Led end-to-end design for core growth initiatives', 'Established component library and tokens', 'Mentored 4 designers'] },
@@ -14,8 +16,15 @@ export default function Experience() {
         </div>
 
         <ol className="relative border-l border-white/10 ml-3">
-          {items.map((item) => (
-            <li key={item.role} className="mb-10 ml-6">
+          {items.map((item, i) => (
+            <motion.li
+              key={item.role}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: i * 0.05 }}
+              className="mb-10 ml-6"
+            >
               <span className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-blue-500"></span>
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <h3 className="text-white font-semibold">{item.role} · {item.company}</h3>
@@ -26,7 +35,7 @@ export default function Experience() {
                   <li key={p}>{p}</li>
                 ))}
               </ul>
-            </li>
+            </motion.li>
           ))}
         </ol>
       </div>

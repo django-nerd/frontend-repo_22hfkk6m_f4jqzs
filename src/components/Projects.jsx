@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const sampleProjects = [
   {
     title: 'E-commerce Redesign',
@@ -29,8 +31,15 @@ export default function Projects() {
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {sampleProjects.map((p) => (
-            <article key={p.title} className="group relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900/40 hover:bg-slate-900/60 transition">
+          {sampleProjects.map((p, i) => (
+            <motion.article
+              key={p.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="group relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900/40 hover:bg-slate-900/60 transition"
+            >
               <div className="aspect-video overflow-hidden">
                 <img src={p.image} alt={p.title} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
@@ -43,7 +52,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import Spline from '@splinetool/react-spline'
+import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
@@ -12,19 +13,24 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950"></div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex items-end pb-16">
-        <div className="max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="max-w-3xl"
+        >
           <p className="text-blue-300/80 text-sm tracking-widest uppercase mb-3">Portfolio • Product • Interaction</p>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white leading-tight">
-            Crafting engaging, accessible customer experiences
+            Mohamed Higazy — CX/UX Designer
           </h1>
           <p className="mt-4 text-slate-300 text-lg">
-            I blend user research, design systems, and motion to build digital products that feel intuitive and memorable.
+            I design dark, modern interfaces with motion and clarity. Focused on customer journeys, accessibility, and systems that scale.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href="#projects" className="inline-flex items-center rounded-lg bg-white text-slate-900 px-5 py-2.5 font-medium hover:bg-slate-100 transition">View Projects</a>
             <a href="#contact" className="inline-flex items-center rounded-lg border border-white/20 text-white px-5 py-2.5 font-medium hover:bg-white/10 transition">Contact</a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
